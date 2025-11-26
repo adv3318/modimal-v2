@@ -1,0 +1,20 @@
+@use "../helpers" as *;
+
+.hero {
+  &__container {
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 27px;
+    align-items: start;
+  }
+
+  &__title {
+  }
+
+  &__button {
+  }
+}

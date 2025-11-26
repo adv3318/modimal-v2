@@ -1,0 +1,12 @@
+@use "../helpers" as *;
+
+.footer {
+  padding-block: fluid(24, 8);
+  background-color: #000;
+
+  &__text {
+    font-size: 12px;
+    line-height: 180%;
+    color: var(--neutral-graycbcbcb);
+  }
+}

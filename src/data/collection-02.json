@@ -1,0 +1,23 @@
+[
+    {
+        "img": "03.jpg",
+        "title": "Classic Tee",
+        "desc": "Everyday essential",
+        "price": "80",
+        "colors": [
+            "white",
+            "black",
+            "blue"
+        ]
+    },
+    {
+        "img": "04.jpg",
+        "title": "Active Leggings",
+        "desc": "Move freely",
+        "price": "110",
+        "colors": [
+            "black",
+            "green"
+        ]
+    }
+]

@@ -1,0 +1,33 @@
+.best {
+  &__container {
+    padding-block: var(--container-margin-y);
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    padding-bottom: fluid(24, 8);
+  }
+
+  &__button {
+    padding: 8px 15px;
+    font-size: 14px;
+    color: var(--primary-primary-600);
+
+    &:hover {
+      color: var(--black);
+    }
+  }
+
+  &__cards {
+  }
+}
+
+.card {
+  &__item {
+  }
+}

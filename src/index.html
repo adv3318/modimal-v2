@@ -2,17 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="/vite.svg" rel="icon" type="image/svg+xml" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite Extended Template</title>
-    <link href="./fonts/Inter-Bold.woff2" as="font" crossorigin rel="preload" type="font/woff2" />
-    <link href="./fonts/Inter-Regular.woff2" as="font" crossorigin rel="preload" type="font/woff2" />
-    <script src="./main.js" type="module"></script>
+    <title>modimal</title>
+    <script src="/main.js" type="module"></script>
   </head>
+
   <body>
-    <main>
-      <!--  Пример подключения html части  -->
-      <load src="./partials/template.html" />
-    </main>
+    <div class="wrapper">
+      {{> header }}
+      <main class="page">
+        <!--  Пример подключения html части  -->
+        {{> hero }} {{> best }} {{> collection }} {{> follow }}
+      </main>
+      {{> footer }}
+    </div>
   </body>
 </html>
+follow

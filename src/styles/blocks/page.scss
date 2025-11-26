@@ -1,0 +1,18 @@
+@use "../helpers" as *;
+
+.page {
+  &__hero {
+    display: flex;
+    align-items: flex-end;
+    min-height: 600px;
+    padding-bottom: fluid(103, 20);
+    background-image: url("./../../images/hero/hero@2x.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    // @include mediaBg {
+    //  background-image: url('./../../img/hero/hero@2x.jpg');
+    // }
+  }
+}

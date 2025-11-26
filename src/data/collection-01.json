@@ -1,0 +1,22 @@
+[
+    {
+        "img": "01.jpg",
+        "title": "Soft Fleece",
+        "desc": "Cozy comfort",
+        "price": "150",
+        "colors": [
+            "olive",
+            "black"
+        ]
+    },
+    {
+        "img": "02.jpg",
+        "title": "Urban Jacket",
+        "desc": "City style",
+        "price": "280",
+        "colors": [
+            "navy",
+            "black"
+        ]
+    }
+]

@@ -1,0 +1,10 @@
+<section class="collection">
+  <div class="collection__container container">
+    <h2 class="collection__title">Best Sellers</h2>
+
+    <div class="collection__cols">
+      <div class="collection__col">{{#each collection-01}} {{> blocks/card-collection this}} {{/each}}</div>
+      <div class="collection__col">{{#each collection-02}} {{> blocks/card-collection this}} {{/each}}</div>
+    </div>
+  </div>
+</section>

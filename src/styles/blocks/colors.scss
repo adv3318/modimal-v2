@@ -1,0 +1,30 @@
+.color {
+  &__black {
+    background-color: var(--black);
+  }
+
+  &__blue {
+    background-color: rgba(125, 195, 235, 1);
+  }
+
+  &__green {
+    background-color: var(--primary);
+  }
+
+  &__olive {
+    background-color: rgba(144, 146, 37, 1);
+  }
+
+  &__navy {
+    background-color: rgba(25, 65, 142, 1);
+  }
+
+  &__pink {
+    background-color: rgba(208, 165, 234, 1);
+  }
+
+  &__white {
+    background-color: var(--white);
+    border: 1px solid rgba(208, 208, 208, 1);
+  }
+}

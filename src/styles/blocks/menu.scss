@@ -1,0 +1,16 @@
+.menu {
+  &__list {
+    display: flex;
+    column-gap: 24px;
+    align-items: center;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 180%;
+    color: var(--neutral-gray404040);
+  }
+}

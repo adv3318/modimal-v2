@@ -1,22 +1,15 @@
-# Шаблон для быстрого старта верстки на HTML + JS + Vite (версия с углубленной работой с Git)
+# Vite Template
 
-_HTML, SCSS, PostCSS, JS, Prettier, Eslint, Commitlint, Husky, Vite_
+За основу взята сборка `npx create-vite-template-js --vanilla`, которая была модифицирована с помощью AI ассистента Antigravity.
 
-## Начало работы
+## Запуск проекта
 
-```zsh
-npx create-vite-template-js --git
-```
-
-### Первые шаги в использовании
-
-- Настроить конфигурацию eslint, prettier, stylelint под себя, если это требуется;
-- Удалить ненужные файлы из папок **public**, **images**, **fonts**, **scripts**, **styles/blocks**;
-- Скачать используемые в проекте шрифты и конвертировать их в woff2 формат;
-- Локально подключить шрифты в **fonts.scss** и в html-файле страницы для preload;
-- Задать ширину контейнера для desktop и laptop версий в **constants.scss**;
-- Определить базовые переменные для проекта в **variables.scss**;
-- Задать focus-visible и disabled эффекты, которые реализованы в миксине с этими же названиями в **mixins.scss**;
+- Установка зависимостей: `npm install`
+- Запуск режима разработки: `npm run dev`
+- Сборка проекта: `npm run build`
+- Предпросмотр сборки: `npm run preview`
+- Проверка кода (линдинг): `npm run lint`
+- Форматирование кода: `npm run prettier`
 
 ## Структура папок и файлов
 
@@ -51,10 +44,10 @@ npx create-vite-template-js --git
 │ │ ├── fonts.scss                       # Локальное подключение шрифтов
 │ │ ├── globals.scss                     # Глобальные стили
 │ │ ├── index.js                         # Подключение всех стилей
+
 │ │ ├── utils.scss                       # Утилитарные стили
 │ │ ├── variables.scss                   # CSS переменные
 │ │ └── vendors.scss                     # Подключение библиотек
-│ ├── about.html                         # Страница "About" (как пример для создания многостраничного сайта)
 │ ├── index.html                         # Основная страница сайта
 │ └── main.js                            # Подключение стилей и скриптов
 ├── .gitignore                           # Список игнорируемых файлов и папок для git
@@ -66,6 +59,7 @@ npx create-vite-template-js --git
 ├── postcss.config.js                    # Конфигурация postcss
 ├── prettier.config.js                   # Конфигурация для prettier
 ├── README.md                            # Документация шаблона
+├── .stylelintignore                     # Игнорируемые файлы для stylelint
 ├── stylelint.config.js                  # Конфигурация для stylelint
 └── vite.config.js                       # Конфигурация для vite
 ```
@@ -84,7 +78,6 @@ npx create-vite-template-js --git
 В шаблоне используется препроцессор **scss** и все его возможности для создания гибких интерфейсов без боли и костылей.
 
 Для нормализации стилей используется библиотека от [Александра Ламкова](https://www.youtube.com/@AleksanderLamkov) - [@a1rth/css-normalize](https://www.npmjs.com/package/@a1rth/css-normalize).
-У него на канале есть [видео](https://www.youtube.com/watch?v=A4Y5VwXGG9g&t=268s) с разбором этой библиотеки, советую посмотреть, так как она не просто обнуляет стили.
 
 Если нужно стилизовать блок/элемент:
 
@@ -99,8 +92,10 @@ npx create-vite-template-js --git
 **Vite** автоматически импортирует эти инструменты в каждый файл со стилями, поэтому можно спокойно использовать любые функции/миксины/константы, реализованные в этих инструментах.
 
 В миксинах и медиа-запросах нет ничего удивительного, но вот к функциям стоит присмотреться, ведь они сильно упрощают создание адаптивных интерфейсов.
-Эти функции fluid() и fluid-to-laptop() конвертируют переданные два значения min и max в использование функции [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp),
-разница только в конечной точке, для fluid() это `$minViewportWidth` (можно поменять значение в описании функции), а для fluid-to-laptop() это значение константы `$container-laptop-width`.
+Эти функции `fluid()` и `fluid-to-laptop()` конвертируют переданные два значения min и max в использование функции [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp).
+Разница только в конечной точке:
+- для `fluid()` это `$minViewportWidth` (значение берется из константы `$container-min-width` в `constants.scss`).
+- для `fluid-to-laptop()` это значение константы `$container-laptop-width`.
 
 При использовании команды `npm run build`, на выходе получается минифицированный и отполированный с помощью постпроцессора **postcss** (плагинов [postcss-preset-env](https://www.npmjs.com/package/postcss-preset-env) и [postcss-pxtorem](https://www.npmjs.com/package/postcss-pxtorem)) css-файл.
 
@@ -110,19 +105,27 @@ npx create-vite-template-js --git
 
 Многие процессы работы с html-файлами автоматизированы при помощи плагинов для **vite**:
 
-- Плагин [vite-plugin-html-inject](https://github.com/donnikitos/vite-plugin-html-inject), позволяет разделять html-код на части, вынося одинаковые элементы в отдельные файлы и подключая их в нужных местах.
+- Плагин [vite-plugin-handlebars](https://github.com/alexlafroscia/vite-plugin-handlebars), позволяет разделять html-код на части, вынося одинаковые элементы в отдельные файлы и подключая их в нужных местах.
 
 ```html
-<load src="./partials/название-файла.html" />
+{{> название-файла }}
 ```
 
-> **ВАЖНО:** В этих частях html-кода следует использовать пути относительно текущего файла, в котором подключена часть html-кода (например при использовании `img` в атрибуте `src`).
+> **ВАЖНО:** В этих частях html-кода следует использовать пути относительно корня `src` (например при использовании `img` в атрибуте `src`, путь должен начинаться с `./images/` или `/images/` если настроен alias).
 
-- Плагин [@spiriit/vite-plugin-svg-spritemap](https://github.com/SpiriitLabs/vite-plugin-svg-spritemap), позволяет легко и удобно работать с svg иконками из папки **icons** как с svg спрайтом.
+Также можно использовать циклы для итерации по массивам данных:
+
+```html
+{{#each название-массива}}
+  {{> название-файла this}}
+{{/each}}
+```
+
+- Плагин [vite-plugin-svg-icons](https://github.com/vbenjs/vite-plugin-svg-icons), позволяет легко и удобно работать с svg иконками из папки **icons** как с svg спрайтом.
 
 ```html
 <svg>
-  <use xlink:href="./sprite#название-иконки"></use>
+  <use href="#icon-название-иконки"></use>
 </svg>
 ```
 
@@ -164,9 +167,39 @@ npx create-vite-template-js --git
 
 > **ВАЖНО:** Изображение, которое будет конвертироваться плагином следует изначально загружать в 2x формате (если установлен параметр `isRetinaSupport: true` для плагина, по умолчанию так и есть), подробнее в документации плагина.
 
+## Работа с данными
+
+Для передачи данных в HTML-шаблоны (например, для генерации списка товаров) используется плагин `vite-plugin-handlebars`.
+
+Чтобы добавить новый источник данных:
+
+1.  Создайте JSON-файл с данными в папке `src/data/` (например, `data.json`).
+2.  Импортируйте этот файл в `vite.config.js`.
+3.  Добавьте данные в объект `context` в настройках плагина `handlebars`.
+
+Пример `vite.config.js`:
+
+```javascript
+import dataObject from './src/data/data.json'; // 1. Импорт
+
+export default defineConfig({
+    plugins: [
+        handlebars({
+            // ...
+            context: {
+                variableName: dataObject, // 2. Добавление в контекст под нужным именем
+            },
+        }),
+        // ...
+    ],
+});
+```
+
+После этого данные будут доступны в HTML-файлах по ключу (например, `{{#each variableName}}`).
+
 ## Работа с JavaScript
 
-Вся работа с JavaScript ведется в папке **scripts**. А для подключения js модулей используйте файл **index.js**, находящийся в этой же папке.
+Вся работа с JavaScript ведется в папке **scripts** (или в корне `src` для `main.js`). А для подключения js модулей используйте файл **main.js** или **index.js** в соответствующих папках.
 
 ## Чистый код
 
@@ -189,3 +222,6 @@ npx create-vite-template-js --git
 - [Favicon генератор по картинке](https://favicon.io/favicon-converter/)
 - [Статья про именование коммитов](https://www.conventionalcommits.org/ru/v1.0.0/)
 - [Эмодзи для коммитов](https://gitmoji.dev/)
+- [Документация Vite](https://vitejs.dev/)
+- [Репозиторий Vite](https://github.com/vitejs/vite)
+- [Awesome Vite](https://github.com/vitejs/awesome-vite)

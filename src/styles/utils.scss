@@ -1,4 +1,6 @@
 // Стили для утилитарных классов
+@use "helpers" as *;
+
 /* stylelint-disable declaration-no-important */
 .container {
   width: 100%;

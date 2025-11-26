@@ -1,0 +1,110 @@
+@use "../helpers" as *;
+
+.card {
+  &__item {
+    position: relative;
+    max-width: 392px;
+  }
+
+  &__fav {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+
+    @include square(24px);
+
+    :hover {
+      stroke: var(--state-color-error);
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__img {
+  }
+
+  &__content {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 5.5px 8px;
+  }
+
+  &__title {
+    a::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text {
+    line-height: 180%;
+  }
+
+  &__price {
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+  &__colors {
+    display: flex;
+    column-gap: 8px;
+
+    span {
+      @include square(24px);
+
+      border-radius: 50%;
+    }
+  }
+}
+
+.fav-card {
+  &--active {
+    .fav-card__icon {
+      fill: var(--state-color-error);
+      stroke: var(--state-color-error);
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+
+  &__icon {
+    @include square(24px);
+
+    fill: var(--white);
+    stroke: var(--neutral-gray202020);
+    stroke-width: 2px;
+    transition-duration: var(--transition-duration);
+  }
+}

@@ -1,0 +1,28 @@
+.collection {
+  &__container {
+    margin-bottom: var(--container-margin-y);
+  }
+
+  &__title {
+    padding-bottom: 24px;
+  }
+
+  &__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
+    justify-content: space-between;
+  }
+
+  &__card {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}

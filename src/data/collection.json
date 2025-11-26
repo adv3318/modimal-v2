@@ -1,0 +1,43 @@
+[
+    {
+        "img": "01.jpg",
+        "title": "Soft Fleece",
+        "desc": "Cozy comfort",
+        "price": "150",
+        "colors": [
+            "olive",
+            "black"
+        ]
+    },
+    {
+        "img": "02.jpg",
+        "title": "Urban Jacket",
+        "desc": "City style",
+        "price": "280",
+        "colors": [
+            "navy",
+            "black"
+        ]
+    },
+    {
+        "img": "03.jpg",
+        "title": "Classic Tee",
+        "desc": "Everyday essential",
+        "price": "80",
+        "colors": [
+            "white",
+            "black",
+            "blue"
+        ]
+    },
+    {
+        "img": "04.jpg",
+        "title": "Active Leggings",
+        "desc": "Move freely",
+        "price": "110",
+        "colors": [
+            "black",
+            "green"
+        ]
+    }
+]
