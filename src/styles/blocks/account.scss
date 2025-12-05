@@ -5,9 +5,18 @@
     display: flex;
     column-gap: 24px;
     align-items: center;
+
+    @include tablet {
+      column-gap: 16px;
+    }
   }
 
   &__item {
+    &.menu-burger {
+      @include mobile {
+        order: -1;
+      }
+    }
   }
 
   &__link {

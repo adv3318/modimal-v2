@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run lint && vite build",
+    "build": "npm run lint:fix && vite build",
     "preview": "vite preview",
     "lint": "eslint src/**/*.{js,jsx} && stylelint src/**/*.{scss,css}",
+    "lint:fix": "eslint src/**/*.{js,jsx} --fix && stylelint src/**/*.{scss,css} --fix",
     "prettier": "prettier --write src/**/*.{js,jsx,scss,css,html}",
     "prepare": "husky"
   },

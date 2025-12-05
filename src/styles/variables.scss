@@ -5,6 +5,7 @@
 :root {
   --font-family: "Montserrat", sans-serif;
   --container-margin-y: 88px;
+  --container-margin-y-mobile: 24px;
   --transition-duration: 0.2s;
   --100vw: calc(100vw - var(--scrollbar-width));
   --container-width: #{$container-desktop-width}px;

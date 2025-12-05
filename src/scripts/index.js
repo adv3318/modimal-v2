@@ -1,5 +1,7 @@
 // Импорт модулей
-import Header from "./Header.js"
+import menuBurger from "@/scripts/menu-burger.js"
+import swiper from "./swiper.js"
 
-// Вызов конструктора класса
-new Header()
+// Инициализация компонентов
+menuBurger()
+swiper()

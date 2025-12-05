@@ -3,15 +3,15 @@
 
   .swiper-pagination {
     position: static;
-    margin-top: 32px;
+    margin-top: fluid(32, 20);
     text-align: center;
     transform: none;
   }
 
   .swiper-pagination-bullet {
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: fluid(14, 8);
+    height: fluid(14, 8);
     margin-inline: 8px;
     background-color: var(--neutral-grayadadad);
     opacity: 1;

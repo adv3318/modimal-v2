@@ -1,6 +1,10 @@
 .best {
   &__container {
     padding-block: var(--container-margin-y);
+
+    @include mobile {
+      padding-block: var(--container-margin-y-mobile);
+    }
   }
 
   &__title-wrapper {

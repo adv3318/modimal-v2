@@ -1,8 +1,18 @@
 .menu {
   &__list {
     display: flex;
-    column-gap: 24px;
+    column-gap: 30px;
     align-items: center;
+
+    @include tablet {
+      column-gap: 16px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 1rem;
+      align-items: flex-start;
+    }
   }
 
   &__item {
@@ -12,5 +22,9 @@
     font-size: 18px;
     line-height: 180%;
     color: var(--neutral-gray404040);
+
+    @include tablet {
+      font-size: 16px;
+    }
   }
 }

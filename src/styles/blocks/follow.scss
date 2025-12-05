@@ -1,15 +1,25 @@
 .follow {
   &__container {
-    margin-bottom: var(--container-margin-y);
+    padding-bottom: var(--container-margin-y);
+
+    @include mobile {
+      padding-bottom: var(--container-margin-y-mobile);
+    }
   }
 
   &__title {
+    padding-bottom: fluid(24, 8);
   }
 
   &__content {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
+
+    @include mobile {
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &____img {

@@ -124,4 +124,18 @@ button {
   min-width: 185px;
   height: 40px;
   background-color: var(--white);
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--primary);
+  }
+
+  @include mobile {
+    justify-content: flex-start;
+    min-width: unset;
+    height: unset;
+    padding: 8px 9px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }

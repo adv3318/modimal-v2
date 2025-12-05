@@ -12,7 +12,7 @@
             <img src="./images/logo/Logo.svg" alt="Modimal" class="logo__img" />
           </a>
         </div>
-        <nav class="header-main__menu menu">
+        <nav class="header-main__menu menu tabs menu-closed">
           <ul class="menu__list">
             <li class="menu__item">
               <a href="#" class="menu__link">Collection</a>
@@ -31,8 +31,15 @@
             </li>
           </ul>
         </nav>
-        <div class="header-main__account account">
+        <div class="header-main__account account header-main__account--auth">
           <ul class="account__list">
+            <li class="account__item menu-burger visible-mobile">
+              <button class="menu-burger__btn">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </li>
             <li class="account__item">
               <a href="#" class="account__link">
                 <svg class="icon icon--search">
@@ -40,13 +47,17 @@
                 </svg>
               </a>
             </li>
-            <li class="account__item">
+            <li class="account__item hidden-mobile">
               <a href="#" class="account__link">
-                <svg class="icon icon--search">
+                <svg class="icon icon--person">
                   <use href="#icon-person"></use>
                 </svg>
               </a>
             </li>
+          </ul>
+        </div>
+        <div class="header-main__account account">
+          <ul class="account__list">
             <li class="account__item">
               <a href="#" class="account__link">
                 <svg class="icon icon--favorite">

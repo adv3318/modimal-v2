@@ -6,11 +6,12 @@
     position: absolute;
     right: 16px;
     bottom: 16px;
+
+    @include mobile {
+      position: static;
+    }
   }
 
   &__link {
   }
-}
-
-.button {
 }

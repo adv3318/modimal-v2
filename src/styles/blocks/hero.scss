@@ -10,11 +10,21 @@
     flex-direction: column;
     row-gap: 27px;
     align-items: start;
+
+    @include mobile {
+      row-gap: 31px;
+      max-width: 168px;
+    }
   }
 
   &__title {
   }
 
   &__button {
+    text-transform: capitalize;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 }

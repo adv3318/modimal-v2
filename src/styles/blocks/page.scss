@@ -8,11 +8,12 @@
     padding-bottom: fluid(103, 20);
     background-image: url("./../../images/hero/hero@2x.jpg");
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: left center;
     background-size: cover;
 
-    // @include mediaBg {
-    //  background-image: url('./../../img/hero/hero@2x.jpg');
-    // }
+    @include mobile {
+      min-height: 551px;
+      background-position: -260px center;
+    }
   }
 }

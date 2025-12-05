@@ -1,6 +1,6 @@
+import "./normalize.scss"
 // Импорт файла с библиотеками
 import "./vendors.scss"
-import "swiper/css/bundle"
 
 // Импорт базовой настройки (шрифты, переменные, утилиты и глобальные)
 
@@ -12,6 +12,7 @@ import "./globals.scss"
 // Импорт стилизации блоков
 import "./blocks/header.scss"
 import "./blocks/menu.scss"
+import "./blocks/menu-burger.scss"
 import "./blocks/account.scss"
 
 import "./blocks/page.scss"
