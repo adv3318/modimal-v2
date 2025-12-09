@@ -24,12 +24,16 @@
 
     @include mobile {
       padding-block: 0;
+      z-index: 150;
     }
   }
 
   &__main {
+    position: relative;
+    z-index: 101;
     padding-top: 16px;
     padding-bottom: 18px;
+    background-color: var(--white);
   }
 }
 
@@ -78,14 +82,12 @@
       display: flex;
       flex-direction: column;
 
-      // justify-content: center;
-
-      row-gap: 2rem;
       padding-inline: 21px;
       padding-top: 106px;
       margin-left: unset;
       background-color: var(--white);
       transition: var(--transition-duration);
+      overflow: hidden;
 
       &.menu-closed {
         @include hide;
@@ -97,6 +99,8 @@
   }
 
   &__account {
+    z-index: 100;
+
     &--auth {
       padding-right: 24px;
       margin-left: auto;
@@ -107,7 +111,5 @@
         margin-left: unset;
       }
     }
-
-    z-index: 100;
   }
 }

@@ -12,8 +12,10 @@ import "./globals.scss"
 // Импорт стилизации блоков
 import "./blocks/header.scss"
 import "./blocks/menu.scss"
+import "./blocks/icons.scss"
 import "./blocks/menu-burger.scss"
 import "./blocks/account.scss"
+import "./blocks/tabs.scss"
 
 import "./blocks/page.scss"
 import "./blocks/hero.scss"

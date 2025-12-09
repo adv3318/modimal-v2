@@ -25,23 +25,3 @@
     justify-content: center;
   }
 }
-
-.icon {
-  @include square(24px);
-}
-
-.icon--search {
-}
-
-.icon--person {
-}
-
-.icon--favorite {
-  fill: var(--white);
-  stroke: var(--neutral-gray202020);
-  stroke-width: 2px;
-  transition: all 0.2s;
-}
-
-.icon--bag {
-}

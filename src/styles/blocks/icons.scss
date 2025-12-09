@@ -1,0 +1,17 @@
+.icon {
+  @include square(24px);
+  transition: var(--transition-duration);
+
+  &--favorite {
+    fill: var(--white);
+    stroke: var(--neutral-gray202020);
+    stroke-width: 2px;
+    transition: all 0.2s;
+  }
+
+  &--arrow-down {
+    &.is-active {
+      transform: rotate(180deg);
+    }
+  }
+}

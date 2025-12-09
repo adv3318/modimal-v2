@@ -1,0 +1,38 @@
+@use "../helpers" as *;
+
+.dropdown {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    background-color: var(--white);
+    overflow-y: auto;
+    padding: 24px 0 16px;
+
+    @include mobile {
+      background-color: transparent;
+      padding-left: 35px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    text-transform: capitalize;
+    transition: var(--transition-duration);
+    color: var(--neutral-gray404040);
+
+    @include mobile {
+      font-size: 14px;
+      padding: 12px 0;
+      border-radius: 0;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
